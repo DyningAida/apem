@@ -2,30 +2,27 @@ import speech_recognition as sr
 from selenium import webdriver 
 from selenium.webdriver.firefox.options import Options
 class Apem(object): 
-    def __init__(self, filname):
-        self.filname = filname
-
-    def masuk(self): #issues#23
-        self.opsi = Options() 
-        self.opsi = webdriver.firefox.options.Options() 
-        self.opsi.headless = False 
-        self.cap = webdriver.common.desired_capabilities.DesiredCapabilities().FIREFOX 
-        self.cap['marionette'] = True 
-        self.driver = webdriver.Firefox()
-        self.driver.get("https://siap.poltekpos.ac.id")
+    def __init__(self, npm, paswd):
+        self.npm = npm
+        self.paswd = paswd
+    def masuk(self): 
+        self.opsi = Options()
+        self.opsi.headless = False
+        self.cap = webdriver.common.desired_capabilities.DesiredCapabilities().FIREFOX
+        self.cap['marionette'] = True
+        self.driver= webdriver.Firefox()
+        self.driver.get('http://siap.poltekpos.ac.id/')
 
     def login(self): 
-        self.opsi = Options() 
-        self.opsi = webdriver.firefox.options.Options() 
+        self.opsi = Options()
         self.opsi.headless = False
-        self.cap = webdriver.common.desired_capabilities.DesiredCapabilities().FIREFOX 
-        self.cap['marionette'] = True 
-        self.driver = webdriver.Firefox() 
-        self.driver.get("https://siap.poltekpos.ac.id")
-        self.driver.find_element_by_name('user_name').send_keys("1184030")
-        self.driver.find_element_by_name('user_pass').send_keys("sariasih54")
+        self.cap = webdriver.common.desired_capabilities.DesiredCapabilities().FIREFOX
+        self.cap['marionette'] = True
+        self.driver= webdriver.Firefox()
+        self.driver.get('http://siap.poltekpos.ac.id/siap/besan.depan.php')
+        self.driver.find_element_by_name('user_name').send_keys(self.npm)
+        self.driver.find_element_by_name('user_pass').send_keys(self.paswd)
         self.driver.find_element_by_xpath('/html/body/table/tbody/tr[5]/td/table[1]/tbody/tr/td[2]/table[2]/tbody/tr[1]/td[2]/div/form/input[4]').click()
-
 
     def speak(self):
         r= sr.Recognizer()
