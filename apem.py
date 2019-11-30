@@ -7,7 +7,7 @@ class Apem(object):
         self.paswd = paswd
     def masuk(self): 
         self.opsi = Options()
-        self.opsi = webdriver.firefox.options.Options() #issue40
+       #penyelesaian issue 40
         self.opsi.headless = False
         self.cap = webdriver.common.desired_capabilities.DesiredCapabilities().FIREFOX
         self.cap['marionette'] = True
