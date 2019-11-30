@@ -5,13 +5,12 @@ class Apem(object):
     def __init__(self, npm, paswd):
         self.npm = npm
         self.paswd = paswd
-    def masuk(self): 
+    def masuk(self):
         self.opsi = Options()
-       #penyelesaian issue 40
         self.opsi.headless = False
         self.cap = webdriver.common.desired_capabilities.DesiredCapabilities().FIREFOX
         self.cap['marionette'] = True
-        self.driver= webdriver.Firefox()
+        self.driver = webdriver.Firefox()
         self.driver.get('http://siap.poltekpos.ac.id/')
 
     def login(self): 
