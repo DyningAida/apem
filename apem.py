@@ -24,7 +24,7 @@ class Apem(object):
         self.driver.find_element_by_xpath('/html/body/table/tbody/tr[5]/td/table[1]/tbody/tr/td[2]/table[2]/tbody/tr[1]/td[2]/div/form/input[4]').click()
         self.driver.find_element_by_xpath('/html/body/table/tbody/tr[5]/td/table[1]/tbody/tr/td[1]/table[2]/tbody/tr[1]/td[2]/a[5]').click()
         self.driver.find_element_by_xpath('/html/body/table/tbody/tr[5]/td/table[3]/tbody/tr[1]/td[2]/p[1]/table/tbody/tr/td[3]/select/option[5]').click()
-        self.driver.find_element_by_class_name('button').click() #issue 44
+        self.driver.find_element_by_class_name('button').click()
     def ceknilai2(self):
         self.opsi = Options()
         self.opsi.headless = False
@@ -84,7 +84,7 @@ class Apem(object):
             print("TEXT : "+r.recognize_google(audio, language='id-ID'))
             x = "siap"
             y = "login siap"
-            z = "Cek nilai semester 1"
+            z = "Cek nilai semester 1" #issue 45
             a = "Cek nilai semester 2"
             b = "Cek nilai semester 3"
             c = "Cek nilai semester pendek"
