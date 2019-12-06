@@ -3,4 +3,4 @@ npm=input("Masukkan NPM ")
 paswd=input("Masukkan password akun SIAP anda ")
 speech = apem.Apem(npm, paswd)
 
-speech.speak()#penyelesaian issue 39
+speech.speak()
